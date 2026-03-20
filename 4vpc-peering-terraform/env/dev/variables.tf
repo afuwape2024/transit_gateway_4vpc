@@ -116,4 +116,3 @@ variable "outside_cidr_block" {
   description = "traffic coming from outside"
 }
 
-

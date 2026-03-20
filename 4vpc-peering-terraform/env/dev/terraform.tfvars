@@ -9,7 +9,6 @@ image_id= "ami-06e3c045d79fd65d9"
 instance_type = "t3.micro"
 outside_cidr_block = "0.0.0.0/0"
 
-
 chicago_vpc = "chicago_vpc"
 chicago_vpc_cidr_block = "10.1.0.0/16"
 chicago_web_subnet_cidr_block = ["10.1.1.0/24", "10.1.2.0/24"]
@@ -27,4 +26,5 @@ indianapolis_vpc_cidr_block = "10.3.0.0/16"
 indianapolis_web_subnet_cidr_block = ["10.3.1.0/24", "10.3.2.0/24"]
 indianapolis_app_subnet_cidr_block = ["10.3.11.0/24", "10.3.12.0/24"]
 indianapolis_database_subnet_cidr_block = ["10.3.21.0/24", "10.3.22.0/24"]
+
 

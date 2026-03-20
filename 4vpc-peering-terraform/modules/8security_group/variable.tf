@@ -1,29 +1,5 @@
-variable "outside_cidr_block" {
-  type        = string
-  description = "CIDR block used for public ingress/egress defaults"
-}
-
-variable "web_nacl" {
-  type = map(any)
-  description = "Web NACL rules configuration"
-}
-
-variable "app_nacls" {
-  type = map(any)
-  description = "App/private NACL rules per city"
-}
-
-variable "database_nacls" {
-  type = map(any)
-  description = "Database NACL rules configuration"
-}
-
-variable "database_ports" {
-  type = map(any)
-  description = "Database port definitions"
-}
-
 variable "detroit_vpc" {}
+variable "outside_cidr_block" {}
 variable "detroit_vpc_web_subnet" {}
 variable "detroit_vpc_web2_subnet" {}
 variable "detroit_vpc_app_subnet" {}

@@ -1,0 +1,55 @@
+#==================================
+#==================================
+output "detroit_web_sg_id" {
+  value = aws_security_group.server_web_sg.id
+}
+
+output "detroit_app_sg_id" {
+  value = aws_security_group.app_sg.id
+}
+
+output "detroit_db_sg_id" {
+  value = aws_security_group.database_sg.id
+}
+
+#==================================
+#==================================
+output "chicago_web_sg_id" {
+  value = aws_security_group.server_web_sg_chicago.id
+}
+
+output "chicago_app_sg_id" {
+  value = aws_security_group.app_sg_chicago.id
+}
+
+output "chicago_db_sg_id" {
+  value = aws_security_group.database_sg_chicago.id
+}
+
+#==================================
+#==================================
+output "columbus_web_sg_id" {
+  value = aws_security_group.server_web_sg_columbus.id
+}
+
+output "columbus_app_sg_id" {
+  value = aws_security_group.app_sg_columbus.id
+}
+
+output "columbus_db_sg_id" {
+  value = aws_security_group.database_sg_columbus.id
+}
+
+#==================================
+#==================================
+output "indianapolis_web_sg_id" {
+  value = aws_security_group.server_web_sg_indianapolis.id
+}
+
+output "indianapolis_app_sg_id" {
+  value = aws_security_group.app_sg_indianapolis.id
+}
+
+output "indianapolis_db_sg_id" {
+  value = aws_security_group.database_sg_indianapolis.id
+}
