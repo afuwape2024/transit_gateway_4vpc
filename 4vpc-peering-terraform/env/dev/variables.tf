@@ -116,3 +116,20 @@ variable "outside_cidr_block" {
   description = "traffic coming from outside"
 }
 
+variable "database_username" {
+  type = string
+}
+
+variable "database_password" {
+  type      = string
+  sensitive = true
+}
+
+variable "database_mysql" {
+  type = string
+}
+
+variable "database_instance_class" {
+  type = string
+}
+

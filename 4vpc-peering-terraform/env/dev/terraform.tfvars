@@ -28,3 +28,7 @@ indianapolis_app_subnet_cidr_block = ["10.3.11.0/24", "10.3.12.0/24"]
 indianapolis_database_subnet_cidr_block = ["10.3.21.0/24", "10.3.22.0/24"]
 
 
+database_username       = "admin"
+database_password       = "adminadmin"
+database_mysql          = "database_mysql"
+database_instance_class = "db.t3.micro"

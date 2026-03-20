@@ -153,13 +153,83 @@ module "security_group" {
   indianapolis_vpc_app2_subnet = module.indianapolis_vpc.indianapolis_vpc_app_subnet_1
 }
 
+module "instance" {
+  source = "../../modules/9instance"
 
+  image_id       = var.image_id
+  instance_type  = var.instance_type
 
+  detroit_web_sg_id = module.security_group.detroit_web_sg_id
+  detroit_app_sg_id = module.security_group.detroit_app_sg_id
+  detroit_db_sg_id  = module.security_group.detroit_db_sg_id
 
+  detroit_vpc             = module.detroit_vpc.detroit_vpc
+  detroit_vpc_igw         = module.internet_gateway.detroit_vpc_igw
+  detroit_vpc_web_subnet  = module.detroit_vpc.detroit_vpc_web_subnet_0
+  detroit_vpc_web2_subnet = module.detroit_vpc.detroit_vpc_web_subnet_1
+  detroit_vpc_app_subnet  = module.detroit_vpc.detroit_vpc_app_subnet_0
+  detroit_vpc_app2_subnet = module.detroit_vpc.detroit_vpc_app_subnet_1
 
+  chicago_vpc             = module.chicago_vpc.chicago_vpc
+  chicago_vpc_igw         = module.internet_gateway.chicago_vpc_igw
+  chicago_vpc_web_subnet  = module.chicago_vpc.chicago_vpc_web_subnet_0
+  chicago_vpc_web2_subnet = module.chicago_vpc.chicago_vpc_web_subnet_1
+  chicago_vpc_app_subnet  = module.chicago_vpc.chicago_vpc_app_subnet_0
+  chicago_vpc_app2_subnet = module.chicago_vpc.chicago_vpc_app_subnet_1
 
+  columbus_vpc             = module.columbus_vpc.columbus_vpc
+  columbus_vpc_igw         = module.internet_gateway.columbus_vpc_igw
+  columbus_vpc_web_subnet  = module.columbus_vpc.columbus_vpc_web_subnet_0
+  columbus_vpc_web2_subnet = module.columbus_vpc.columbus_vpc_web_subnet_1
+  columbus_vpc_app_subnet  = module.columbus_vpc.columbus_vpc_app_subnet_0
+  columbus_vpc_app2_subnet = module.columbus_vpc.columbus_vpc_app_subnet_1
 
+  indianapolis_vpc             = module.indianapolis_vpc.indianapolis_vpc
+  indianapolis_vpc_igw         = module.internet_gateway.indianapolis_vpc_igw
+  indianapolis_vpc_web_subnet  = module.indianapolis_vpc.indianapolis_vpc_web_subnet_0
+  indianapolis_vpc_web2_subnet = module.indianapolis_vpc.indianapolis_vpc_web_subnet_1
+  indianapolis_vpc_app_subnet  = module.indianapolis_vpc.indianapolis_vpc_app_subnet_0
+  indianapolis_vpc_app2_subnet = module.indianapolis_vpc.indianapolis_vpc_app_subnet_1
+}
 
+module "database" {
+  source = "../../modules/10database"
+  database_mysql          = var.database_mysql
+  database_username       = var.database_username
+  database_password       = var.database_password
+
+  database_security_group = module.security_group.detroit_db_sg_id
+  db_subnet               = [module.detroit_vpc.detroit_vpc_database_subnet_0, module.detroit_vpc.detroit_vpc_database_subnet_1]
+  outside_cidr_block      = var.outside_cidr_block
+
+  detroit_vpc             = module.detroit_vpc.detroit_vpc
+  detroit_vpc_igw         = module.internet_gateway.detroit_vpc_igw
+  detroit_vpc_web_subnet  = module.detroit_vpc.detroit_vpc_web_subnet_0
+  detroit_vpc_web2_subnet = module.detroit_vpc.detroit_vpc_web_subnet_1
+  detroit_vpc_app_subnet  = module.detroit_vpc.detroit_vpc_app_subnet_0
+  detroit_vpc_app2_subnet = module.detroit_vpc.detroit_vpc_app_subnet_1
+
+  chicago_vpc             = module.chicago_vpc.chicago_vpc
+  chicago_vpc_igw         = module.internet_gateway.chicago_vpc_igw
+  chicago_vpc_web_subnet  = module.chicago_vpc.chicago_vpc_web_subnet_0
+  chicago_vpc_app_subnet  = module.chicago_vpc.chicago_vpc_app_subnet_0
+  chicago_vpc_web2_subnet = module.chicago_vpc.chicago_vpc_web_subnet_1
+  chicago_vpc_app2_subnet = module.chicago_vpc.chicago_vpc_app_subnet_1
+
+  columbus_vpc             = module.columbus_vpc.columbus_vpc
+  columbus_vpc_igw         = module.internet_gateway.columbus_vpc_igw
+  columbus_vpc_web_subnet  = module.columbus_vpc.columbus_vpc_web_subnet_0
+  columbus_vpc_app_subnet  = module.columbus_vpc.columbus_vpc_app_subnet_0
+  columbus_vpc_web2_subnet = module.columbus_vpc.columbus_vpc_web_subnet_1
+  columbus_vpc_app2_subnet = module.columbus_vpc.columbus_vpc_app_subnet_1
+
+  indianapolis_vpc             = module.indianapolis_vpc.indianapolis_vpc
+  indianapolis_vpc_igw         = module.internet_gateway.indianapolis_vpc_igw
+  indianapolis_vpc_web_subnet  = module.indianapolis_vpc.indianapolis_vpc_web_subnet_0
+  indianapolis_vpc_app_subnet  = module.indianapolis_vpc.indianapolis_vpc_app_subnet_0
+  indianapolis_vpc_web2_subnet = module.indianapolis_vpc.indianapolis_vpc_web_subnet_1
+  indianapolis_vpc_app2_subnet = module.indianapolis_vpc.indianapolis_vpc_app_subnet_1
+}
 
 
 

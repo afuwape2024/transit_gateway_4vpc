@@ -113,8 +113,8 @@ resource "aws_network_acl" "detroit_vpc_database_nacl" {
     protocol   = "tcp"
     action     = "allow"
     cidr_block = local.database_nacls.detroit.app_cidr
-    from_port  = local.database_ports.postgres
-    to_port    = local.database_ports.postgres
+    from_port  = local.database_ports.mysql
+    to_port    = local.database_ports.mysql
   }
 
   # Allow return traffic to app subnet (ephemeral ports)
@@ -133,8 +133,8 @@ resource "aws_network_acl" "detroit_vpc_database_nacl" {
     protocol   = "tcp"
     action     = "allow"
     cidr_block = local.database_nacls.detroit.app_cidr
-    from_port  = local.database_ports.postgres
-    to_port    = local.database_ports.postgres
+    from_port  = local.database_ports.mysql
+    to_port    = local.database_ports.mysql
   }
 
   # Allow outbound ephemeral (responses)
@@ -262,8 +262,8 @@ resource "aws_network_acl" "chicago_vpc_database_nacl" {
     protocol   = "tcp"
     action     = "allow"
     cidr_block = local.database_nacls.chicago.app_cidr
-    from_port  = local.database_ports.postgres
-    to_port    = local.database_ports.postgres
+    from_port  = local.database_ports.mysql
+    to_port    = local.database_ports.mysql
   }
 
   ingress {
@@ -280,8 +280,8 @@ resource "aws_network_acl" "chicago_vpc_database_nacl" {
     protocol   = "tcp"
     action     = "allow"
     cidr_block = local.database_nacls.chicago.app_cidr
-    from_port  = local.database_ports.postgres
-    to_port    = local.database_ports.postgres
+    from_port  = local.database_ports.mysql
+    to_port    = local.database_ports.mysql
   }
 
   egress {
@@ -358,8 +358,8 @@ resource "aws_network_acl" "columbus_vpc_database_nacl" {
     protocol   = "tcp"
     action     = "allow"
     cidr_block = local.database_nacls.columbus.app_cidr
-    from_port  = local.database_ports.postgres
-    to_port    = local.database_ports.postgres
+    from_port  = local.database_ports.mysql
+    to_port    = local.database_ports.mysql
   }
 
   ingress {
@@ -376,8 +376,8 @@ resource "aws_network_acl" "columbus_vpc_database_nacl" {
     protocol   = "tcp"
     action     = "allow"
     cidr_block = local.database_nacls.columbus.app_cidr
-    from_port  = local.database_ports.postgres
-    to_port    = local.database_ports.postgres
+    from_port  = local.database_ports.mysql
+    to_port    = local.database_ports.mysql
   }
 
   egress {
@@ -506,8 +506,8 @@ resource "aws_network_acl" "indianapolis_vpc_database_nacl" {
     protocol   = "tcp"
     action     = "allow"
     cidr_block = local.database_nacls.indianapolis.app_cidr
-    from_port  = local.database_ports.postgres
-    to_port    = local.database_ports.postgres
+    from_port  = local.database_ports.mysql
+    to_port    = local.database_ports.mysql
   }
 
   ingress {
@@ -524,8 +524,8 @@ resource "aws_network_acl" "indianapolis_vpc_database_nacl" {
     protocol   = "tcp"
     action     = "allow"
     cidr_block = local.database_nacls.indianapolis.app_cidr
-    from_port  = local.database_ports.postgres
-    to_port    = local.database_ports.postgres
+    from_port  = local.database_ports.mysql
+    to_port    = local.database_ports.mysql
   }
 
   egress {
