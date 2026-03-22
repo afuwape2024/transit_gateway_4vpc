@@ -1,4 +1,10 @@
+
+
 variable "outside_cidr_block" {}
+variable "detroit_vpc_database_subnet_0" {}
+variable "chicago_vpc_database_subnet_0" {}
+variable "columbus_vpc_database_subnet_0" {}
+variable "indianapolis_vpc_database_subnet_0" {}
 
 variable "detroit_vpc" {}
 variable "detroit_vpc_public_subnet" {}

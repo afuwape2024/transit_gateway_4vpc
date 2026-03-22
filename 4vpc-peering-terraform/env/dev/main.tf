@@ -54,6 +54,11 @@ module "route_table" {
   source = "../../modules/6route_table"
   outside_cidr_block = var.outside_cidr_block
 
+  detroit_vpc_database_subnet_0 = module.detroit_vpc.detroit_vpc_database_subnet_0
+  chicago_vpc_database_subnet_0 = module.chicago_vpc.chicago_vpc_database_subnet_0
+  columbus_vpc_database_subnet_0 = module.columbus_vpc.columbus_vpc_database_subnet_0
+  indianapolis_vpc_database_subnet_0 = module.indianapolis_vpc.indianapolis_vpc_database_subnet_0
+
   detroit_vpc = module.detroit_vpc.detroit_vpc
   detroit_vpc_public_subnet = module.detroit_vpc.detroit_vpc_web_subnet_0
   detroit_vpc_private_subnet = module.detroit_vpc.detroit_vpc_app_subnet_0

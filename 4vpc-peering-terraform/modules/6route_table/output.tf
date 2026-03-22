@@ -13,6 +13,10 @@ output "detroit_vpc_private_route_table" {
   value = aws_route_table.detroit_vpc_private_route_table.id
 }
 
+output "detroit_vpc_private_database_route_table" {
+  value = aws_route_table.detroit_vpc_private_database_route_table.id
+}
+
 #===========================================================
 #===========================================================
 #===========================================================
@@ -29,6 +33,10 @@ output "chicago_nat_gw1" {
 
 output "chicago_vpc_private_route_table" {
   value = aws_route_table.chicago_vpc_private_route_table.id
+}
+
+output "chicago_vpc_private_database_route_table" {
+  value = aws_route_table.chicago_vpc_private_database_route_table.id
 }
 #===========================================================
 #===========================================================
@@ -48,6 +56,10 @@ output "columbus_vpc_private_route_table" {
   value = aws_route_table.columbus_vpc_private_route_table.id
 }
 
+output "columbus_vpc_private_database_route_table" {
+  value = aws_route_table.columbus_vpc_private_database_route_table.id
+}
+
 #===========================================================
 #===========================================================
 #===========================================================
@@ -64,5 +76,8 @@ output "indianapolis_nat_gw1" {
 
 output "indianapolis_vpc_private_route_table" {
   value = aws_route_table.indianapolis_vpc_private_route_table.id
+}
+output "indianapolis_vpc_private_database_route_table" {
+  value = aws_route_table.indianapolis_vpc_private_database_route_table.id
 }
 

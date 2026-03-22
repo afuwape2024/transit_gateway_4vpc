@@ -1,5 +1,5 @@
 
-resource "aws_vpc" "detroit_vpc" {
+resource "aws_vpc" "detroit_vpc" { #this is for detroit vpc
   cidr_block           = var.detroit_vpc_cidr_block
   enable_dns_hostnames = true
   enable_dns_support   = true
