@@ -38,7 +38,6 @@ resource "aws_subnet" "detroit_vpc_app_subnet_0" {
   vpc_id                  = aws_vpc.detroit_vpc.id
   cidr_block              = var.detroit_app_subnet_cidr_block[0]
   availability_zone       = var.availability_zones[0]
-  map_public_ip_on_launch = true
 
   tags = {
     Name = "detroit_vpc_app_subnet_0"
@@ -49,7 +48,6 @@ resource "aws_subnet" "detroit_vpc_app_subnet_1" {
   vpc_id                  = aws_vpc.detroit_vpc.id
   cidr_block              = var.detroit_app_subnet_cidr_block[1]
   availability_zone       = var.availability_zones[1]
-  map_public_ip_on_launch = true
 
   tags = {
     Name = "detroit_vpc_app_subnet_1"
@@ -61,7 +59,6 @@ resource "aws_subnet" "detroit_vpc_database_subnet_0" {
   vpc_id                  = aws_vpc.detroit_vpc.id
   cidr_block              = var.detroit_database_subnet_cidr_block[0]
   availability_zone       = var.availability_zones[0]
-  map_public_ip_on_launch = true
 
   tags = {
     Name = "detroit_vpc_database_subnet_0"
@@ -72,7 +69,6 @@ resource "aws_subnet" "detroit_vpc_database_subnet_1" {
   vpc_id                  = aws_vpc.detroit_vpc.id
   cidr_block              = var.detroit_database_subnet_cidr_block[1]
   availability_zone       = var.availability_zones[1]
-  map_public_ip_on_launch = true
 
   tags = {
     Name = "detroit_vpc_database_subnet_1"
